@@ -19,6 +19,7 @@ BuildRequires: at-spi-devel
 BuildRequires: dbus-glib-devel
 BuildRequires: libgnomeui2-devel
 BuildRequires: perl-XML-Parser
+BuildRequires: gnome-doc-utils >= 0.3.2
 
 
 %description
