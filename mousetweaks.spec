@@ -1,5 +1,5 @@
 %define name mousetweaks
-%define version 2.22.2
+%define version 2.22.3
 %define release %mkrel 1
 
 Summary: Help motorically impaired users to use the mouse
@@ -18,7 +18,7 @@ BuildRequires: gnome-panel-devel
 BuildRequires: at-spi-devel
 BuildRequires: dbus-glib-devel
 BuildRequires: libgnomeui2-devel
-BuildRequires: perl-XML-Parser
+BuildRequires: intltool
 BuildRequires: gnome-doc-utils >= 0.3.2
 
 
