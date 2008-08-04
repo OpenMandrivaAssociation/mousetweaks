@@ -1,5 +1,5 @@
 %define name mousetweaks
-%define version 2.23.5
+%define version 2.23.6
 %define release %mkrel 1
 
 Summary: Help motorically impaired users to use the mouse
@@ -50,7 +50,7 @@ Mouse Preferences of GNOME Control Center or through command-line.
 
 %install
 rm -rf %{buildroot}
-%makeinstall_std
+GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 %makeinstall_std
 %find_lang %name --with-gnome
 
 %clean
