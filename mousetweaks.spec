@@ -1,5 +1,5 @@
 %define name mousetweaks
-%define version 2.23.90
+%define version 2.23.91
 %define release %mkrel 1
 
 Summary: Help motorically impaired users to use the mouse
@@ -49,16 +49,22 @@ Mouse Preferences of GNOME Control Center or through command-line.
 %make
 
 %install
-rm -rf %{buildroot}
+rm -rf %{buildroot} %name.lang
 GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 %makeinstall_std
 %find_lang %name --with-gnome
+for omf in %buildroot%_datadir/omf/*/*-??*.omf;do 
+echo "%lang($(basename $omf|sed -e s/.*-// -e s/.omf//)) $(echo $omf|sed -e s!%buildroot!!)" >> %name.lang
+done
+
 
 %clean
 rm -rf %{buildroot}
 
-%post
 %define schemas mousetweaks pointer-capture-applet
+%if %mdvver < 200900
+%post
 %post_install_gconf_schemas %schemas
+%endif
 
 %preun
 %preun_uninstall_gconf_schemas %schemas
@@ -72,6 +78,8 @@ rm -rf %{buildroot}
 %_bindir/mousetweaks
 %_bindir/pointer-capture-applet
 %_libdir/bonobo/servers/*.server
+%dir %_datadir/omf/%name
+%_datadir/omf/%name/%name-C.omf
 %_mandir/man1/*.1*
 %_datadir/%name
 
