@@ -18,6 +18,7 @@ BuildRequires: gnome-panel-devel
 BuildRequires: at-spi-devel
 BuildRequires: dbus-glib-devel
 BuildRequires: libgnomeui2-devel
+BuildRequires: libxtst-devel
 BuildRequires: intltool
 BuildRequires: gnome-doc-utils >= 0.3.2
 
