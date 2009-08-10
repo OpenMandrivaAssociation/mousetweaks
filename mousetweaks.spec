@@ -1,5 +1,5 @@
 %define name mousetweaks
-%define version 2.27.5
+%define version 2.27.90
 %define release %mkrel 1
 
 Summary: Help motorically impaired users to use the mouse
