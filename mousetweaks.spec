@@ -1,6 +1,6 @@
 %define name mousetweaks
 %define version 2.28.0
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary: Help motorically impaired users to use the mouse
 Name: %{name}
@@ -72,7 +72,7 @@ rm -rf %{buildroot}
 
 %files -f %name.lang
 %defattr(-,root,root)
-%doc AUTHORS ChangeLog README NEWS TODO
+%doc AUTHORS README NEWS TODO
 %_sysconfdir/gconf/schemas/mousetweaks.schemas
 %_sysconfdir/gconf/schemas/pointer-capture-applet.schemas
 %_bindir/dwell-click-applet
