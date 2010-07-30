@@ -1,5 +1,5 @@
 %define name mousetweaks
-%define version 2.30.2
+%define version 2.31.5
 %define release %mkrel 1
 
 Summary: Help motorically impaired users to use the mouse
@@ -13,11 +13,9 @@ Url: http://live.gnome.org/Mousetweaks/Home
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: libGConf2-devel
 BuildRequires: gtk+2-devel
-BuildRequires: libglade2.0-devel
+BuildRequires: glib2-devel >= 2.25.9
 BuildRequires: gnome-panel-devel
-BuildRequires: at-spi-devel
 BuildRequires: dbus-glib-devel
-BuildRequires: libgnomeui2-devel
 BuildRequires: libxtst-devel
 BuildRequires: intltool
 BuildRequires: gnome-doc-utils >= 0.3.2
