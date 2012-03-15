@@ -1,25 +1,22 @@
-%define name mousetweaks
-%define version 2.32.1
-%define release %mkrel 3
-
 Summary: Help motorically impaired users to use the mouse
-Name: %{name}
-Version: %{version}
-Release: %{release}
-Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
+Name: mousetweaks
+Version: 3.2.1
+Release: 1
 License: GPLv3+
 Group: Accessibility
 Url: http://live.gnome.org/Mousetweaks/Home
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: libGConf2-devel
-BuildRequires: gtk+2-devel
-BuildRequires: glib2-devel >= 2.25.9
-BuildRequires: gnome-panel-devel
-BuildRequires: dbus-glib-devel
-BuildRequires: libxtst-devel
-BuildRequires: intltool
-BuildRequires: gnome-doc-utils >= 0.3.2
+Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
 
+BuildRequires: intltool
+BuildRequires: pkgconfig(glib-2.0)
+BuildRequires: pkgconfig(gnome-doc-utils)
+BuildRequires: pkgconfig(gsettings-desktop-schemas)
+BuildRequires: pkgconfig(gtk+-3.0)
+BuildRequires: pkgconfig(libpanelapplet-3.0)
+BuildRequires: pkgconfig(x11)
+BuildRequires: pkgconfig(xcursor)
+BuildRequires: pkgconfig(xfixes)
+BuildRequires: pkgconfig(xtst)
 
 %description
 The Mousetweaks package provides mouse accessibility enhancements for 
@@ -44,41 +41,28 @@ Mouse Preferences of GNOME Control Center or through command-line.
 %setup -q
 
 %build
-%configure2_5x
+%configure2_5x \
+	--disable-static \
+	--enable-pointer-capture \
+	--enable-dwell-click
+
 %make
 
 %install
-rm -rf %{buildroot} %name.lang
-GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 %makeinstall_std
-%find_lang %name --with-gnome
-for omf in %buildroot%_datadir/omf/*/*-??*.omf;do 
-echo "%lang($(basename $omf|sed -e s/.*-// -e s/.omf//)) $(echo $omf|sed -e s!%buildroot!!)" >> %name.lang
-done
+%makeinstall_std
+%find_lang %{name} --with-gnome
 
-
-%clean
-rm -rf %{buildroot}
-
-%define schemas mousetweaks pointer-capture-applet
-%if %mdvver < 200900
-%post
-%post_install_gconf_schemas %schemas
-%endif
-
-%preun
-%preun_uninstall_gconf_schemas %schemas
-
-%files -f %name.lang
-%defattr(-,root,root)
+%files -f %{name}.lang
 %doc AUTHORS README NEWS TODO
-%_sysconfdir/gconf/schemas/mousetweaks.schemas
-%_sysconfdir/gconf/schemas/pointer-capture-applet.schemas
-%_bindir/dwell-click-applet
-%_bindir/mousetweaks
-%_bindir/pointer-capture-applet
-%_libdir/bonobo/servers/*.server
-%dir %_datadir/omf/%name
-%_datadir/omf/%name/%name-C.omf
-%_mandir/man1/*.1*
-%_datadir/%name
+%{_bindir}/dwell-click-applet
+%{_bindir}/mousetweaks
+%{_bindir}/pointer-capture-applet
+%{_datadir}/dbus-1/services/org.gnome.panel.applet.DwellClickAppletFactory.service
+%{_datadir}/dbus-1/services/org.gnome.panel.applet.PointerCaptureAppletFactory.service
+%{_datadir}/GConf/gsettings/*.convert
+%{_datadir}/glib-2.0/schemas/*.xml
+%{_datadir}/gnome-panel/applets/org.gnome.applets.DwellClickApplet.panel-applet
+%{_datadir}/gnome-panel/applets/org.gnome.applets.PointerCaptureApplet.panel-applet
+%{_datadir}/%{name}
+%{_mandir}/man1/*.1*
 
