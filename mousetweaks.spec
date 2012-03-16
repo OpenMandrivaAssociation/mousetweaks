@@ -1,7 +1,7 @@
 Summary: Help motorically impaired users to use the mouse
 Name: mousetweaks
 Version: 3.2.1
-Release: 1
+Release: 2
 License: GPLv3+
 Group: Accessibility
 Url: http://live.gnome.org/Mousetweaks/Home
@@ -12,7 +12,7 @@ BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(gnome-doc-utils)
 BuildRequires: pkgconfig(gsettings-desktop-schemas)
 BuildRequires: pkgconfig(gtk+-3.0)
-BuildRequires: pkgconfig(libpanelapplet-3.0)
+BuildRequires: pkgconfig(libpanelapplet-4.0)
 BuildRequires: pkgconfig(x11)
 BuildRequires: pkgconfig(xcursor)
 BuildRequires: pkgconfig(xfixes)
