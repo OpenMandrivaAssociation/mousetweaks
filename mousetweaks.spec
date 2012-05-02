@@ -44,10 +44,7 @@ Mouse Preferences of GNOME Control Center or through command-line.
 %setup -q
 
 %build
-%configure2_5x \
-	--disable-static \
-	--enable-pointer-capture \
-	--enable-dwell-click
+%configure2_5x
 
 %make
 
@@ -57,15 +54,9 @@ Mouse Preferences of GNOME Control Center or through command-line.
 
 %files -f %{name}.lang
 %doc AUTHORS README NEWS TODO
-%{_bindir}/dwell-click-applet
 %{_bindir}/mousetweaks
-%{_bindir}/pointer-capture-applet
-%{_datadir}/dbus-1/services/org.gnome.panel.applet.DwellClickAppletFactory.service
-%{_datadir}/dbus-1/services/org.gnome.panel.applet.PointerCaptureAppletFactory.service
 %{_datadir}/GConf/gsettings/*.convert
 %{_datadir}/glib-2.0/schemas/*.xml
-%{_datadir}/gnome-panel/applets/org.gnome.applets.DwellClickApplet.panel-applet
-%{_datadir}/gnome-panel/applets/org.gnome.applets.PointerCaptureApplet.panel-applet
 %{_datadir}/%{name}
 %{_mandir}/man1/*.1*
 
