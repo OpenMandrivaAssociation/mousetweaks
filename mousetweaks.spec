@@ -1,3 +1,5 @@
+%define url_ver	%(echo %{version}|cut -d. -f1,2)
+
 Summary: Help motorically impaired users to use the mouse
 Name: mousetweaks
 Version: 3.4.1
@@ -5,9 +7,10 @@ Release: 1
 License: GPLv3+
 Group: Accessibility
 Url: http://live.gnome.org/Mousetweaks/Home
-Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
+Source0: ftp://ftp.gnome.org/pub/GNOME/sources/mousetweaks/%{url_ver}/%{name}-%{version}.tar.xz
 
 BuildRequires: intltool
+BuildRequires: rarian
 BuildRequires: pkgconfig(glib-2.0)
 BuildRequires: pkgconfig(gnome-doc-utils)
 BuildRequires: pkgconfig(gsettings-desktop-schemas)
