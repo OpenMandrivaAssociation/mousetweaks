@@ -1,6 +1,6 @@
 Summary: Help motorically impaired users to use the mouse
 Name: mousetweaks
-Version: 3.4.2
+Version: 3.8.0
 Release: 1
 License: GPLv3+
 Group: Accessibility
