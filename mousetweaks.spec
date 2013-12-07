@@ -1,7 +1,7 @@
 Summary:	Help motorically impaired users to use the mouse
 Name:		mousetweaks
 Version:	3.8.0
-Release:	3
+Release:	4
 License:	GPLv3+
 Group:		Accessibility
 Url:		http://live.gnome.org/Mousetweaks/Home
