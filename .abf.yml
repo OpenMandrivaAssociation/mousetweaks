@@ -1,5 +1,6 @@
 removed_sources:
+  mousetweaks-3.10.0.tar.xz: fc9b6ab5081b92040295d66cd7bfe5b9806723c2
   mousetweaks-3.4.2.tar.xz: 7d2428e0053c2f4ea99286a87b2452b33145bcda
   mousetweaks-3.8.0.tar.xz: ad06800025695e24d7559dfdce435c8fafedd3fe
 sources:
-  mousetweaks-3.10.0.tar.xz: fc9b6ab5081b92040295d66cd7bfe5b9806723c2
+  mousetweaks-3.12.0.tar.xz: 074197a2e71ced4bbc8a2b51c2c54a4ff57d6c86

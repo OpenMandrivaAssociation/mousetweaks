@@ -1,11 +1,12 @@
 Summary:	Help motorically impaired users to use the mouse
+
 Name:		mousetweaks
-Version:	3.10.0
+Version:	3.12.0
 Release:	1
 License:	GPLv3+
 Group:		Accessibility
 Url:		http://live.gnome.org/Mousetweaks/Home
-Source0:	https://download.gnome.org/sources/mousetweaks/3.10/%{name}-%{version}.tar.xz
+Source0:	ftp://ftp.gnome.org:21/pub/GNOME/sources/mousetweaks/3.12/%{name}-%{version}.tar.xz
 
 BuildRequires:	intltool
 BuildRequires:	rarian
@@ -57,5 +58,6 @@ Mouse Preferences of GNOME Control Center or through command-line.
 %{_datadir}/glib-2.0/schemas/*.xml
 %{_datadir}/%{name}
 %{_mandir}/man1/*.1*
+
 
 
