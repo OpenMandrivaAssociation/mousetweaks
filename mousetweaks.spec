@@ -10,11 +10,10 @@ Source0:	ftp://ftp.gnome.org:21/pub/GNOME/sources/mousetweaks/3.12/%{name}-%{ver
 
 BuildRequires:	intltool
 BuildRequires:	rarian
-BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gnome-doc-utils)
 BuildRequires:	pkgconfig(gsettings-desktop-schemas)
 BuildRequires:	pkgconfig(gtk+-3.0)
-BuildRequires:	pkgconfig(libpanelapplet-4.0)
+BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xcursor)
 BuildRequires:	pkgconfig(xfixes)
