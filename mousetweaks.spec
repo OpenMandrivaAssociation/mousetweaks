@@ -1,5 +1,6 @@
-Summary:	Help motorically impaired users to use the mouse
+%define _disable_rebuild_configure 1
 
+Summary:	Help motorically impaired users to use the mouse
 Name:		mousetweaks
 Version:	3.12.0
 Release:	7
