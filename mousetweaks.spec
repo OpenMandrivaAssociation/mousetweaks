@@ -3,7 +3,7 @@
 Summary:	Help motorically impaired users to use the mouse
 Name:		mousetweaks
 Version:	3.32.0
-Release:	1
+Release:	2
 License:	GPLv3+
 Group:		Accessibility
 Url:		http://live.gnome.org/Mousetweaks/Home
@@ -43,12 +43,12 @@ Mouse Preferences of GNOME Control Center or through command-line.
 %setup -q
 
 %build
-%configure2_5x
+%configure
 
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 %find_lang %{name} --with-gnome
 
 %files -f %{name}.lang
@@ -58,6 +58,3 @@ Mouse Preferences of GNOME Control Center or through command-line.
 %{_datadir}/glib-2.0/schemas/*.xml
 %{_datadir}/%{name}
 %{_mandir}/man1/*.1*
-
-
-
