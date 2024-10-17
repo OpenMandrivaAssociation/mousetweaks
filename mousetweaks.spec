@@ -6,7 +6,7 @@ Version:	3.32.0
 Release:	3
 License:	GPLv3+
 Group:		Accessibility
-Url:		http://live.gnome.org/Mousetweaks/Home
+Url:		https://live.gnome.org/Mousetweaks/Home
 Source0:	ftp://ftp.gnome.org:21/pub/GNOME/sources/mousetweaks/3.12/%{name}-%{version}.tar.xz
 
 BuildRequires:	intltool
