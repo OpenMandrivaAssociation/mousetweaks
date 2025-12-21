@@ -9,6 +9,11 @@ Group:		Accessibility
 Url:		https://live.gnome.org/Mousetweaks/Home
 Source0:	ftp://ftp.gnome.org:21/pub/GNOME/sources/mousetweaks/3.12/%{name}-%{version}.tar.xz
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	intltool
 BuildRequires:	rarian
 BuildRequires:	pkgconfig(gnome-doc-utils)
